@@ -231,7 +231,7 @@ st.markdown("""
 # ─────────────────────────────────────────────────────────────
 @st.cache_resource(show_spinner="Opening the library…")
 def load_all():
-    art = recsys.load_artifacts("artifacts/model.joblib")
+    art = recsys.load_artifacts("model.joblib")
     it = art["items"].copy()
     it["decade"] = np.where(it["year"].notna(),
                             (it["year"] // 10 * 10).fillna(0).astype(int).astype(str) + "s", "Unknown")
